@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: regular;
+  src: url(./fonts/AnyConv.com__plain-regular-webfont.ttf);
+}
+
+@font-face {
+  font-family: light;
+  src: url(./fonts/AnyConv.com__plain-light-webfont.ttf);
+}
+
+@font-face {
+  font-family: lightItalic;
+  src: url(./fonts/AnyConv.com__silkserif-lightitalic-webfont.ttf);
+}
+
+@font-face {
+  font-family: regularItalic;
+  src: url(./fonts/AnyConv.com__silkserif-regularitalic-webfont.ttf);
+}
+
+.regular {
+  font-family: regular;
+}
+
+.light {
+  font-family: light;
+}
+
+.lightItalic {
+  font-family: lightItalic;
+}
+
+.regularItalic {
+  font-family: regularItalic;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  font-family: regular;
+  color: #fff;
+}
+
+.loader-font-changer {
+  color: transparent;
+}
+
+.loader-font-changer1 {
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+}
+
+.loader-font-changer2 {
+  color: white;
+  font-family: regular;
+}

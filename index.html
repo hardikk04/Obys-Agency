@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="loader h-[100vh] w-full bg-[#0a0a0a] z-50 pt-[10vw] pl-[6vw] fixed top-0 left-0"
+    >
+      <div
+        class="loader-elem flex text-white overflow-hidden justify-between w-[40%]"
+      >
+        <div class="loader-process flex mt-[.8vw]">
+          <h1 class="text-[3vw] leading-none lightItalic font-[100]">00</h1>
+          <h1 class="text-[3vw] leading-none lightItalic font-[100] ml-[1vw]">
+            - 100
+          </h1>
+        </div>
+        <h1
+          class="text-[7vw] leading-none text-white regular uppercase ml-[4vw] tracking-tight"
+        >
+          Your
+        </h1>
+      </div>
+      <div class="loader-elem overflow-hidden">
+        <h1
+          class="text-[7vw] leading-none text-white regular uppercase tracking-tight"
+        >
+          Web Experience
+        </h1>
+      </div>
+      <div class="loader-elem flex overflow-hidden">
+        <h2
+          class="text-[7vw] leading-none text-white regular uppercase tracking-tight"
+        >
+          Is loading Right
+        </h2>
+        <h2
+          class="loader-font-changer text-[7vw] leading-none lightItalic uppercase ml-[2vw]"
+        >
+          NOW
+        </h2>
+      </div>
+    </div>
+    <div class="main bg-[#151515]">
+      <div class="page1 h-[100vh] w-full"></div>
+      <div class="page2 h-[100vh] w-full bg-[#474747]"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
