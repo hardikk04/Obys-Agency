@@ -41,61 +41,146 @@ loco();
 
 const tl = gsap.timeline();
 
-tl.from(".loader-elem>h1", {
-  y: 150,
-  stagger: 0.4,
-});
+const fullLoaderAnimation = () => {
+  tl.from(".loader-elem>h1", {
+    y: 150,
+    stagger: 0.4,
+  });
 
-tl.from(".loader-elem>h2", {
-  y: 150,
-});
+  tl.from(".loader-elem>h2", {
+    y: 150,
+  });
 
-tl.from(".loader-process", {
-  opacity: 0,
-});
-
-let = counter = 0;
-const loaderCounter = document.querySelector(".loader-process>h1");
-const myInterval = setInterval(() => {
-  if (counter < 100) {
-    counter++;
-    loaderCounter.textContent = counter;
-  } else {
-    loaderAnimation();
-    clearInterval(myInterval);
-  }
-}, 40);
-
-let = counter1 = 0;
-
-const loaderFontChanger = document.querySelector(".loader-font-changer");
-let flag = 0;
-const myInterval1 = setInterval(() => {
-  if (counter1 < 4000) {
-    counter1 += 800;
-    if (flag === 0) {
-      loaderFontChanger.classList.add("loader-font-changer1");
-      loaderFontChanger.classList.remove("loader-font-changer2");
-      flag = 1;
-    } else {
-      loaderFontChanger.classList.add("loader-font-changer2");
-      loaderFontChanger.classList.remove("loader-font-changer1");
-
-      flag = 0;
-    }
-  } else {
-    clearInterval(myInterval1);
-  }
-}, 800);
-
-function loaderAnimation() {
-  tl.to(".loader>.loader-elem", {
+  tl.from(".loader-process", {
     opacity: 0,
   });
 
-  tl.to(".loader", {
-    top: "-100vh",
-    ease: "power3.inOut",
-    duration: 1,
+  let = counter = 0;
+  const loaderCounter = document.querySelector(".loader-process>h1");
+  const myInterval = setInterval(() => {
+    if (counter < 100) {
+      counter++;
+      loaderCounter.textContent = counter;
+    } else {
+      loaderAnimation();
+      clearInterval(myInterval);
+    }
+  }, 40);
+
+  let = counter1 = 0;
+
+  const loaderFontChanger = document.querySelector(".loader-font-changer");
+  let flag = 0;
+  const myInterval1 = setInterval(() => {
+    if (counter1 < 4000) {
+      counter1 += 800;
+      if (flag === 0) {
+        loaderFontChanger.classList.add("loader-font-changer1");
+        loaderFontChanger.classList.remove("loader-font-changer2");
+        flag = 1;
+      } else {
+        loaderFontChanger.classList.add("loader-font-changer2");
+        loaderFontChanger.classList.remove("loader-font-changer1");
+
+        flag = 0;
+      }
+    } else {
+      clearInterval(myInterval1);
+    }
+  }, 800);
+
+  function loaderAnimation() {
+    tl.to(".loader>.loader-elem", {
+      opacity: 0,
+    });
+
+    tl.to(".loader", {
+      top: "-100vh",
+      ease: "power3.inOut",
+      duration: 1,
+    });
+    page1Animation();
+  }
+};
+fullLoaderAnimation();
+
+function page1Animation() {
+  tl.from(".page1-text>h1", {
+    y: 150,
+    stagger: {
+      amount: 0.7,
+    },
+  });
+
+  tl.from("nav", {
+    delay: -0.4,
+    opacity: 0,
   });
 }
+
+Shery.mouseFollower();
+function page2Animation() {
+  const page2VideoElem = document.querySelector(".page2-video");
+  page2VideoElem.addEventListener("mouseenter", () => {
+    gsap.to(".mousefollower", {
+      opacity: 0,
+    });
+  });
+
+  page2VideoElem.addEventListener("mouseleave", () => {
+    gsap.to(".mousefollower", {
+      opacity: 1,
+    });
+  });
+
+  page2VideoElem.addEventListener("mousemove", (dets) => {
+    gsap.to(".page2-cursor", {
+      left: dets.x - 610,
+      top: dets.y - 280,
+    });
+  });
+
+  page2VideoElem.addEventListener("mouseleave", (dets) => {
+    gsap.to(".page2-cursor", {
+      left: "70%",
+      top: "-15%",
+    });
+  });
+
+  let flag = 0;
+
+  const video = document.querySelector(".page2-video>video");
+  page2VideoElem.addEventListener("click", () => {
+    if (flag === 0) {
+      video.play();
+      gsap.to(video, {
+        opacity: 1,
+      });
+
+      gsap.to(".page2-cursor", {
+        scale: 0.6,
+      });
+
+      document.querySelector(
+        ".page2-cursor"
+      ).innerHTML = `<i class="ri-pause-line text-[2vw]"></i>`;
+
+      flag = 1;
+    } else {
+      gsap.to(video, {
+        opacity: 0,
+      });
+      video.pause();
+      gsap.to(".page2-cursor", {
+        scale: 1,
+      });
+
+      document.querySelector(
+        ".page2-cursor"
+      ).innerHTML = `<i class="ri-play-fill text-[2vw]"></i>`;
+      flag = 0;
+    }
+  });
+}
+
+page2Animation();

@@ -46,6 +46,14 @@ html {
   font-family: regularItalic;
 }
 
+.mousefollower {
+  border: 1px solid rgba(255, 255, 255, 0.526);
+  mix-blend-mode: difference;
+  height: 4.5vh;
+  width: 4.5vh;
+  background-color: transparent !important;
+}
+
 .main {
   position: relative;
   width: 100%;
@@ -65,4 +73,18 @@ html {
 .loader-font-changer2 {
   color: white;
   font-family: regular;
+}
+
+.page1-hero > .page1-text:nth-child(1) {
+  position: relative;
+}
+
+.page1-hero > .page1-text:nth-child(1)::before {
+  content: "01";
+  font-family: lightItalic;
+  position: absolute;
+  top: 14%;
+  font-size: 3vw;
+  color: #fff;
+  left: 18%;
 }
