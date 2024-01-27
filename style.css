@@ -88,3 +88,18 @@ html {
   color: #fff;
   left: 18%;
 }
+
+.page3-title > h1::before {
+  content: "02";
+  margin-top: 0.7vw;
+  font-family: lightItalic;
+  position: absolute;
+  top: 14%;
+  font-size: 3vw;
+  color: #fff;
+  left: -10%;
+}
+
+.page3-circle {
+  border: 1px solid white;
+}
