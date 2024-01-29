@@ -111,3 +111,20 @@ html {
 .page5-circle {
   border: 1px solid white;
 }
+
+.page6-box {
+  transition: all ease 0.5s;
+}
+
+.page6-box > span {
+  transition: all ease 0.5s;
+}
+
+.page6-box:hover {
+  height: 40vh;
+  width: 40vh;
+}
+
+.page6-box:hover.page6-box > span {
+  font-size: 0.6vw;
+}
