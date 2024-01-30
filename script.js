@@ -443,3 +443,54 @@ function page5Animation() {
   });
 }
 page5Animation();
+
+function page8ScrollerAnimation() {
+  gsap.to(".scroller-elem1", {
+    transform: "translateX(-50%)",
+    scrollTrigger: {
+      scroller: ".main",
+      trigger: ".scroller-elem1",
+      start: "top 100%",
+      end: "top 0",
+      scrub: 1,
+      // markers: true,
+    },
+  });
+
+  gsap.to(".scroller-elem2", {
+    transform: "translateX(50%)",
+    scrollTrigger: {
+      scroller: ".main",
+      trigger: ".scroller-elem2",
+      start: "top 100%",
+      end: "top 0",
+      scrub: 1,
+      // markers: true,
+    },
+  });
+
+  gsap.to(".scroller-elem3", {
+    transform: "translateX(-50%)",
+    scrollTrigger: {
+      scroller: ".main",
+      trigger: ".scroller-elem3",
+      start: "top 100%",
+      end: "top 0",
+      scrub: 1,
+      // markers: true,
+    },
+  });
+
+  gsap.to(".scroller-elem4", {
+    transform: "translateX(50%)",
+    scrollTrigger: {
+      scroller: ".main",
+      trigger: ".scroller-elem4",
+      start: "top 100%",
+      end: "top 0",
+      scrub: 1,
+      // markers: true,
+    },
+  });
+}
+page8ScrollerAnimation();
