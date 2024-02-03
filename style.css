@@ -174,3 +174,9 @@ html {
   color: #fff;
   left: -10%;
 }
+
+.page9-title > h3 > span {
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  font-family: lightItalic;
+}

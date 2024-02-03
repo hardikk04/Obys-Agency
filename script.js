@@ -494,3 +494,46 @@ function page8ScrollerAnimation() {
   });
 }
 page8ScrollerAnimation();
+
+const page9Text = document.querySelector(".page9-title");
+const page9TextH1 = document.querySelector(".page9-title>h1");
+
+let clutter = "";
+page9TextH1.textContent.split("").forEach((word) => {
+  clutter += `<span>${word}</span>`;
+});
+page9TextH1.innerHTML = clutter;
+
+const page9TextH3 = document.querySelector(".page9-title>h3");
+let clutter1 = "";
+page9TextH3.textContent.split("").forEach((word) => {
+  clutter1 += `<span class="opacity-0">${word}</span>`;
+});
+page9TextH3.innerHTML = clutter1;
+
+page9Text.addEventListener("mouseenter", () => {
+  gsap.to(".page9-title>h1>span", {
+    opacity: 0,
+    stagger: 0.05,
+    delay: -0.3,
+  });
+
+  gsap.to(".page9-title>h3>span", {
+    opacity: 1,
+    stagger: 0.05,
+    // delay: 0.3,
+  });
+});
+page9Text.addEventListener("mouseleave", () => {
+  gsap.to(".page9-title>h1>span", {
+    opacity: 1,
+    stagger: 0.05,
+    delay: -0.1,
+  });
+
+  gsap.to(".page9-title>h3>span", {
+    opacity: 0,
+    stagger: 0.03,
+    // delay: 0.3,
+  });
+});
